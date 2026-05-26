@@ -1,0 +1,18 @@
+# CODEOWNERS for regen-network/sensor-sdk
+#
+# Each line is a file pattern followed by one or more GitHub handles. The
+# listed owners are auto-requested for review on PRs touching matching files.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner — covers everything not matched by a more specific rule below.
+*                       @DarrenZal
+
+# TODO (Day 1, June 2026): add Mahashri Ranjith Kumar as co-owner on the SDK source
+#   and tests once her GitHub handle is confirmed. Suggested rules:
+#     /src/                @DarrenZal @<mahashri-handle>
+#     /tests/              @DarrenZal @<mahashri-handle>
+
+# CI + repo metadata: technical lead reviews
+/.github/               @DarrenZal
+/pyproject.toml         @DarrenZal
+/CODEOWNERS             @DarrenZal
