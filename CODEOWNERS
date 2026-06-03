@@ -7,12 +7,11 @@
 # Default owner — covers everything not matched by a more specific rule below.
 *                       @DarrenZal
 
-# TODO (Day 1, June 2026): add Mahashri Ranjith Kumar as co-owner on the SDK source
-#   and tests once her GitHub handle is confirmed. Suggested rules:
-#     /src/                @DarrenZal @<mahashri-handle>
-#     /tests/              @DarrenZal @<mahashri-handle>
+# SDK source and tests: co-owned by technical lead + primary author.
+/src/                   @DarrenZal @maha-rk
+/tests/                 @DarrenZal @maha-rk
 
-# CI + repo metadata: technical lead reviews
+# CI + repo metadata: technical lead reviews.
 /.github/               @DarrenZal
 /pyproject.toml         @DarrenZal
 /CODEOWNERS             @DarrenZal
