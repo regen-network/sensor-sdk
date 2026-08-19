@@ -72,10 +72,15 @@ What held up:
 - **Self-healing re-queue.** A record marked enriched whose body is
   empty/placeholder re-enters the scan queue automatically on the next run,
   so early fetches repair themselves without manual intervention.
-- **Never clobber a real body.** Replacement of an existing body is allowed
-  only when the existing body fails the placeholder check AND the new fetch is
-  substantially longer. Metadata refreshes must not be able to destroy
-  transcript content, even when the API returns junk.
+- **Never clobber a real body.** Automatic replacement is allowed only when
+  the existing body is classified as a placeholder **and** the new fetch is a
+  valid, non-placeholder body. Being substantially longer may be an additional
+  conservative check; it is never sufficient on its own. A real body is not
+  automatically replaced merely because another fetch is longer. Metadata
+  refreshes must not be able to destroy transcript content, even when the API
+  returns junk. If a source supports legitimate edits to a completed
+  transcript, handle those through an explicit, versioned update path rather
+  than this placeholder-repair rule.
 
 **Contract implication:** records need a processing-state signal (or the
 sensor must guarantee it only emits completed records), and re-emission of an
